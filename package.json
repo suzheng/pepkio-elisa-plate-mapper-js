@@ -1,0 +1,75 @@
+{
+  "name": "pepkio-elisa-plate-mapper",
+  "version": "0.1.0",
+  "description": "Visual 96-well ELISA plate layout planner with standard-curve auto-fill, batch unknown assignment, layout validation, and bench-ready exports via the Pepkio REST API.",
+  "readme": "README_NPM.md",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "pepkio-elisa-plate-mapper": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README_NPM.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run --exclude '**/integration.test.ts'",
+    "test:integration": "vitest run integration.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepkio/pepkio-elisa-plate-mapper-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pepkio/pepkio-elisa-plate-mapper-js/issues"
+  },
+  "homepage": "https://www.pepkio.com/tools/elisa-plate-mapper",
+  "keywords": [
+    "elisa-plate-mapper",
+    "elisa",
+    "plate-map",
+    "96-well",
+    "assay",
+    "standards",
+    "dilution",
+    "optical-density",
+    "spectrophotometry",
+    "laboratory-tools",
+    "life-sciences",
+    "pepkio",
+    "typescript",
+    "node",
+    "rest-api"
+  ],
+  "author": "Pepkio Team",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "commander": "^15.1.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.10",
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^5.1.0"
+  }
+}
